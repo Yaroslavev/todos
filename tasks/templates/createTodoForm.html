@@ -1,0 +1,17 @@
+{% extends 'home.html' %}
+{% block content %}
+<h1 class="mt-2 mx-5">Create Todo</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <table class="w-50 table table-light mt-4 mx-5" style="border-radius: 10px;">
+        {% for field in form %}
+        <tr>
+            <th>{{field.label}}</th>
+            <td>{{field}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <button class="w-25 mt-1 mx-5 btn btn-primary" type="submit">Create</button>
+</form>
+{% endblock %}

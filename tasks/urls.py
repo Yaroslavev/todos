@@ -1,7 +1,9 @@
 from django.urls import path
-from tasks.views import Home, Details
+from tasks.views import Delete, Home, Details, Create
 
 urlpatterns = [
-    path("home/", Home),
-    path("details/<int:id>", Details)
+    path("", Home, name = 'home'),
+    path("details/<int:id>", Details, name = 'details'),
+    path("create/", Create, name = 'create'),
+    path("delete/<int:id>", Delete, name = 'delete')
 ]
